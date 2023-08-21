@@ -1,0 +1,83 @@
+<div>
+  <div class="tarjeta-princial">
+    <h3>Tarjeta Principal</h3>
+    <div class="container-principal">
+      <div class="card">
+        <div class="top">
+          <div class="left">
+            <h2>Mi saldo</h2>
+            <p>
+              {{
+                tarjetaPrincipal.saldo | currency : "USD" : "symbol" : "1.0-0"
+              }}
+            </p>
+          </div>
+          <img src="../../../assets/card.png" class="right" />
+        </div>
+        <div class="middle">
+          <h4>{{ tarjetaPrincipal.nro_tarjeta }}</h4>
+        </div>
+        <div class="bottom">
+          <div class="left">
+            <small>Titular tarjeta</small>
+            <h5>{{ name }}</h5>
+          </div>
+          <div class="right">
+            <div class="expiry">
+              <small>Valido hasta</small>
+              <h5>{{ tarjetaPrincipal.fecha_vencimiento }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="select">
+        <label for="tarjetasSecundarias">Selecciona tarjeta secundaria</label>
+        <select
+          class="custom-select"
+          id="tarjetasSecundarias"
+          name="tarjetaSecundaria"
+          class="custom-select"
+          [(ngModel)]="tarjetaSeleccionada"
+          (ngModelChange)="cambiarTarjetaPrincipal()"
+        >
+          <option value="" disabled selected>--Seleccione la tarjeta--</option>
+          <option
+            *ngFor="let tarjeta of tarjetasSecundarias"
+            [value]="tarjeta._id"
+          >
+            {{ tarjeta.nro_tarjeta }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="tarjetas-secundaris">
+    <h3>Tarjetas Secundarias</h3>
+    <div class="container-tarjetas-secundarias">
+      <div class="card" *ngFor="let tar_secu of tarjetasSecundarias">
+        <div class="top">
+          <div class="left">
+            <h2>Mi saldo</h2>
+            <p>{{ tar_secu.saldo | currency : "USD" : "symbol" : "1.0-0" }}</p>
+          </div>
+          <img src="../../../assets/card.png" class="right" />
+        </div>
+        <div class="middle">
+          <h4>{{ tar_secu.nro_tarjeta }}</h4>
+        </div>
+        <div class="bottom">
+          <div class="left">
+            <small>Titular tarjeta</small>
+            <h5>{{ name }}</h5>
+          </div>
+          <div class="right">
+            <div class="expiry">
+              <small>Valido hasta</small>
+              <h5>{{ tar_secu.saldo }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

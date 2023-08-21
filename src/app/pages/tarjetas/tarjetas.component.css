@@ -1,0 +1,122 @@
+.tarjeta-princial {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  margin-left: 10px;
+}
+.container-principal {
+  display: flex;
+  justify-content: space-between;
+}
+.container-principal .select {
+  margin-right: 50px;
+}
+.container-principal .select label {
+  margin-right: 10px;
+}
+.custom-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+}
+.tarjeta-princial h3 {
+  margin-bottom: 10px;
+}
+.card {
+  background-color: #8a2be2;
+  width: 350px;
+  height: 190px;
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 300ms ease;
+}
+.card .middle {
+  display: flex;
+  justify-content: flex-end;
+}
+.left p {
+  color: white;
+}
+.card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .top .info {
+  display: flex;
+  align-items: center;
+}
+.card .top .info .datos {
+  margin-left: 15px;
+}
+.card .top .info .datos .mount {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+.card .top .porcentaje {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .top .porcentaje .porcentaje-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card .top .porcentaje i .green,
+.card .top .porcentaje .green {
+  color: green;
+}
+.card .top .porcentaje i .red,
+.card .top .porcentaje .red {
+  color: red;
+}
+.card .top .left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card .top .left p {
+  font-size: 1.2rem;
+}
+.card .top .left h2 {
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.card .top .left img {
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid white;
+  border-radius: var(--border-radius-2);
+  padding: 0.4rem;
+}
+
+.card .top img.right {
+  width: 3.5rem;
+}
+
+.card .bottom {
+  display: flex;
+}
+
+.card .bottom .right {
+  display: flex;
+  margin-left: 20px;
+  gap: 2rem;
+}
+.tarjetas-secundaris {
+  margin-left: 10px;
+}
+.container-tarjetas-secundarias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

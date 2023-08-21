@@ -1,1 +1,42 @@
-<p>home works!</p>
+<div class="container">
+  <div class="navigation" [ngClass]="{ active: isMenuActive }">
+    <div class="sidebar" *ngFor="let item of menu">
+      <a
+        [routerLink]="item.to"
+        routerLinkActive="active-link"
+        (click)="handleClick(item)"
+      >
+        <i [class]="item.icon"></i>
+        <h4>{{ item.title }}</h4>
+      </a>
+    </div>
+  </div>
+
+  <!-- ========================= Main ==================== -->
+  <div class="main" [ngClass]="{ active: isMenuActive }">
+    <div class="topbar">
+      <div class="container-search">
+        <div class="icon-menu" (click)="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Busca aqui" />
+        </div>
+      </div>
+      <div class="profile-area">
+        <div>
+          <i class="fa-solid fa-gear border-circle"></i>
+          <i class="fa-regular fa-bell border-circle"></i>
+        </div>
+        <div class="profile">
+          <div class="profile-photo">
+            <img src="../../../assets/user.webp" />
+          </div>
+          <h5>{{ name }}</h5>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

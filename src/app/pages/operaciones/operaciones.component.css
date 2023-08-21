@@ -1,0 +1,65 @@
+.container-operaciones {
+  display: flex;
+  gap: 20px;
+  margin-left: 10px;
+}
+.container-saldo {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 60%;
+}
+.container-saldo h2 {
+  margin: 10px 0;
+}
+input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgb(233, 233, 233);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  background-color: #8a2be2;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  margin-left: 20px;
+}
+button:hover {
+  cursor: pointer;
+}
+.container-cuentas {
+  background-color: white;
+  width: 60%;
+  border-radius: 10px;
+  padding: 10px;
+}
+.container-cuentas h2 {
+  margin: 10px;
+}
+.tarjeta-item {
+  margin-bottom: 20px;
+}
+
+.tarjeta-info {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(240, 238, 238);
+  padding: 10px 0;
+}
+.tarjeta-info strong {
+  margin-right: 5px;
+  font-size: 13px;
+}

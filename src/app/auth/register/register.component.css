@@ -1,0 +1,156 @@
+.error-message {
+  display: flex;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  margin: 1px;
+  padding: 1px;
+  align-content: center;
+  justify-content: center;
+}
+
+.fullscreen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: lightgray;
+}
+
+.centered-container {
+  display: flex;
+  align-items: center;
+}
+
+.centered-content {
+  background-color: white;
+  border: 1px solid #8a2be2;
+  width: 80%;
+  height: 550px;
+}
+.title {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.title span {
+  margin: 5px;
+  text-transform: uppercase;
+  color: #8a2be2;
+}
+.centered-content h1 {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.color-login {
+  background-color: #8a2be2;
+  color: white;
+}
+.color-login h1 {
+  margin: 5px 25px 0 25px;
+}
+.container-form {
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.form-control {
+  margin: 5px 0;
+}
+.custom-input {
+  border: none; /* Quita el borde */
+  border-bottom: 1px solid gray; /* Agrega el borde gris abajo */
+  outline: none; /* Quita el contorno al hacer foco */
+  background-color: transparent; /* Fondo transparente */
+  padding: 5px 0; /* Espacio interno */
+  width: 100%; /* Ancho completo */
+}
+.custom-input::placeholder {
+  color: rgb(225, 219, 219);
+}
+
+.btn {
+  background-color: white;
+  color: #8a2be2;
+  padding: 5px;
+  margin-top: 10px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.virtual-keyboard {
+  display: flex;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.virtual-keyboard p {
+  color: white;
+  margin-left: 5px;
+}
+.next__page {
+  margin-top: 15px;
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.next__page a {
+  color: #ffff;
+  margin-left: 5px;
+}
+
+@media (max-width: 630px) {
+  .fullscreen-container {
+    flex-direction: column; /* Cambia la dirección de flexión a columna */
+  }
+  .centered-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content-title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 60px;
+  }
+}
+@media (max-width: 300px) {
+  .container-form {
+    margin: 5px 15px;
+  }
+  .centered-content h1 {
+    text-align: center;
+    margin: 10px;
+  }
+  .content-title h2 {
+    display: inline;
+  }
+  .color-login {
+    height: 500px;
+  }
+  .color-login h1 {
+    font-size: 25px;
+    margin: 5px;
+  }
+  .next__page {
+    margin-top: 0;
+  }
+}
+/* Aplicar a todos los inputs de tipo número */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Espacio entre el input y las flechas */
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

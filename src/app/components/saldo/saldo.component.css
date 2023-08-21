@@ -1,0 +1,137 @@
+.saldo {
+  height: 100%;
+}
+.saldo h1 {
+  display: flex;
+}
+
+.saldo .cards {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.saldo .cards .card {
+  width: 320px;
+  height: 180px;
+  margin-right: 20px;
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 300ms ease;
+}
+.saldo .card .middle {
+  display: flex;
+  justify-content: flex-end;
+}
+.left p {
+  color: white;
+}
+.saldo .card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.saldo .card .top .info {
+  display: flex;
+  align-items: center;
+}
+.saldo .card .top .info .datos {
+  margin-left: 15px;
+}
+.saldo .card .top .info .datos .mount {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+.saldo .card .top .porcentaje {
+  display: flex;
+  flex-direction: column;
+}
+
+.saldo .card .top .porcentaje .porcentaje-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.saldo .card .top .porcentaje i .green,
+.saldo .card .top .porcentaje .green {
+  color: green;
+}
+.saldo .card .top .porcentaje i .red,
+.saldo .card .top .porcentaje .red {
+  color: red;
+}
+.saldo .card .top .left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.saldo .card .top .left p {
+  font-size: 1.2rem;
+}
+.saldo .card .top .left h2 {
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.saldo .card .top .left img {
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid white;
+  border-radius: var(--border-radius-2);
+  padding: 0.4rem;
+}
+
+.saldo .card .top img.right {
+  width: 3.5rem;
+}
+
+.saldo .card .bottom {
+  display: flex;
+}
+
+.saldo .card .bottom .right {
+  display: flex;
+  margin-left: 20px;
+  gap: 2rem;
+}
+
+.icons-wallet {
+  background-color: rgb(181, 120, 39);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+}
+.wallet-ingress {
+  background-color: rgb(24, 126, 164);
+}
+.icons-wallet .arrow {
+  font-size: 10px;
+}
+.icons-wallet .wallet {
+  font-size: 20px;
+}
+
+.card-saldo {
+  background-color: #8a2be2;
+}
+.egreso,
+.ingreso {
+  background-color: white;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta según tus necesidades */
+}

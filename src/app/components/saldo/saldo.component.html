@@ -1,0 +1,81 @@
+<section class="saldo">
+  <h1>Inicio</h1>
+  <div *ngIf="!loading" class="cards">
+    <div class="card card-saldo">
+      <div class="top">
+        <div class="left">
+          <h2>Mi saldo</h2>
+          <p>{{ tarjeta.saldo | currency : "USD" : "symbol" : "1.0-0" }}</p>
+        </div>
+        <img src="../../../assets/card.png" class="right" />
+      </div>
+      <div class="middle">
+        <h4>{{ formatearNumeroTarjeta(tarjeta.nro_tarjeta) }}</h4>
+      </div>
+      <div class="bottom">
+        <div class="left">
+          <small>Titular tarjeta</small>
+          <h5>Luz Deny</h5>
+        </div>
+        <div class="right">
+          <div class="expiry">
+            <small>Valido hasta</small>
+            <h5>{{ tarjeta.fecha_vencimiento }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card egreso">
+      <div class="top">
+        <div class="info">
+          <div class="icons-wallet">
+            <i class="fa-solid fa-arrow-up arrow"></i>
+            <i class="fa-solid fa-money-bill wallet"></i>
+          </div>
+          <div class="datos">
+            <p>Ingresos</p>
+            <p class="mount">
+              {{ ingresos.mesActual | currency : "USD" : "symbol" : "2.2-2" }}
+            </p>
+          </div>
+        </div>
+        <div class="porcentaje">
+          <div class="porcentaje-center">
+            <i class="fa-solid fa-caret-up green"></i>
+            <p class="green">+{{ ingresos.porcentaje }}%</p>
+          </div>
+          <p>Mes pasado</p>
+        </div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <div class="card ingreso">
+      <div class="top">
+        <div class="info">
+          <div class="icons-wallet wallet-ingress">
+            <i class="fa-solid fa-arrow-down"></i>
+            <i class="fa-solid fa-money-bill wallet"></i>
+          </div>
+          <div class="datos">
+            <p>Egresos</p>
+            <p class="mount">
+              {{ egresos.mesActual | currency : "USD" : "symbol" : "2.2-2" }}
+            </p>
+          </div>
+        </div>
+        <div class="porcentaje">
+          <div class="porcentaje-center">
+            <i class="fa-solid fa-caret-down red"></i>
+            <p class="red">+{{ egresos.porcentaje }}%</p>
+          </div>
+          <p>Mes pasado</p>
+        </div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loading-container">
+    <h2>Cargando...</h2>
+  </div>
+</section>

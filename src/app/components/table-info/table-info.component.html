@@ -1,0 +1,41 @@
+<div *ngIf="cuotas.length === 0">
+  <h2>No existen cuotas</h2>
+</div>
+<table id="table-info" *ngIf="cuotas.length > 0">
+  <tr>
+    <th></th>
+    <th>Monto total</th>
+    <th>Cuotas</th>
+    <th>Fecha de emision</th>
+    <th>Mensual</th>
+    <th>Tasa interes</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let cuota of cuotas">
+    <td>
+      <label class="container-checkbox">
+        <input type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </td>
+    <td>
+      <div class="interes">
+        {{ cuota.monto | currency : "USD" : "symbol" : "2.2-2"
+        }}<small class="muted">Sin interes</small>
+      </div>
+    </td>
+    <td>{{ cuota.cuotas }}</td>
+    <td class="muted">
+      <p>{{ formatDate(cuota.fechaEmision, "dd MMM, yyyy") }}</p>
+    </td>
+    <td>{{ cuota.mensual | currency : "USD" : "symbol" : "2.2-2" }}</td>
+    <td class="muted">{{ cuota.tasaInteres }}% interes</td>
+    <td>
+      <button class="pagar">Pagar</button>
+    </td>
+    <td>
+      <i class="fa-solid fa-ellipsis"></i>
+    </td>
+  </tr>
+</table>

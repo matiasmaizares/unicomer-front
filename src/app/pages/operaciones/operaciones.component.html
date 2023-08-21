@@ -1,0 +1,43 @@
+<div class="container-operaciones">
+  <div class="container-saldo">
+    <h2>
+      Saldo actual: {{ tarjeta.saldo | currency : "USD" : "symbol" : "2.2-2" }}
+    </h2>
+    <div class="container-transferencia">
+      <h3>Tranferir dinero</h3>
+      <div class="transferir-acciones">
+        <input type="number" [(ngModel)]="transferenciaMonto" />
+        <i class="fa-solid fa-money-bill-transfer"></i>
+        <input
+          type="text"
+          [(ngModel)]="destinatario"
+          placeholder="CBU / ALIAS"
+        />
+        <button (click)="realizarTransferencia()">Tranferir</button>
+      </div>
+    </div>
+    <div class="container-extraer">
+      <h3>Extraer dinero</h3>
+      <div class="extraer-acciones">
+        <input type="number" [(ngModel)]="extraccionMonto" />
+        <button (click)="extraerDinero()">Extraer</button>
+      </div>
+    </div>
+    <div class="container-depositar">
+      <h3>Depositar dinero</h3>
+      <div class="depositar-acciones">
+        <input type="number" [(ngModel)]="depositoMonto" />
+        <button (click)="depositarDinero()">Depositar</button>
+      </div>
+    </div>
+  </div>
+  <div class="container-cuentas">
+    <h2>Cuentas para disponibles para trasferir</h2>
+    <div *ngFor="let tarjeta of tarjetas" class="tarjeta-item">
+      <div class="tarjeta-info">
+        <p><strong>CBU: </strong> {{ tarjeta.cbu }}</p>
+        <p><strong>Alias: </strong> {{ tarjeta.alias }}</p>
+      </div>
+    </div>
+  </div>
+</div>

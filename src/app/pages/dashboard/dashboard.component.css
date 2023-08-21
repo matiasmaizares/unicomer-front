@@ -1,0 +1,52 @@
+#dashboard {
+  margin: 0 10px;
+  height: 100%;
+  grid-area: dashboard;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "saldo"
+    "info"
+    "cuotas";
+  grid-gap: 20px;
+}
+#saldo {
+  grid-area: saldo;
+  margin-bottom: 10px;
+}
+#info {
+  grid-area: info;
+  display: flex;
+}
+.half {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+#balance {
+  grid-area: balance;
+}
+#transacciones {
+  grid-area: transacciones;
+}
+#cuotas {
+  grid-area: cuotas;
+  margin-top: 5px;
+}
+@media only screen and (max-width: 1600px) {
+  #info {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-areas:
+      "saldo"
+      "info"
+      "cuotas";
+  }
+}

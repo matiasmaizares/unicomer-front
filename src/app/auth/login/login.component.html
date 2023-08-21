@@ -1,1 +1,65 @@
-<p>login works!</p>
+<div class="fullscreen-container">
+  <div class="centered-container">
+    <div class="centered-content content-title">
+      <h2 class="title">Bienvenidos a <span>Unicomer</span></h2>
+    </div>
+    <div class="centered-content color-login">
+      <h1>LOGO</h1>
+      <form
+        [formGroup]="myForm"
+        autocomplete="off"
+        class="container-form"
+        (submit)="signIn()"
+      >
+        <div class="form-control">
+          <label>Tipo de documento</label>
+          <input
+            class="custom-input"
+            id="documento"
+            formControlName="type_document"
+            placeholder="Ingrese tipo de documento"
+          />
+          <span *ngIf="isValidField('type_document')" class="error-message">
+            {{ getFieldError("type_document") }}
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="nro_document">Numero de documento</label>
+
+          <input
+            id="nro_document"
+            formControlName="nro_document"
+            class="custom-input"
+            placeholder="Ingrese su nro de documento"
+          />
+          <span *ngIf="isValidField('nro_document')" class="error-message">
+            {{ getFieldError("nro_document") }}
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="password">Clave</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="custom-input"
+            placeholder="Ingrese su clave"
+          />
+          <span *ngIf="isValidField('password')" class="error-message">
+            {{ getFieldError("password") }}
+          </span>
+        </div>
+        <button class="btn primary" type="submit">Ingresar</button>
+      </form>
+
+      <div class="virtual-keyboard">
+        <i class="fa-regular fa-keyboard"></i>
+        <p>Teclado virtual</p>
+      </div>
+
+      <small class="next__page"
+        >¿No tienes cuenta? <a routerLink="/register">Registrate aqui</a></small
+      >
+    </div>
+  </div>
+</div>

@@ -1,1 +1,92 @@
-<p>register works!</p>
+<div class="fullscreen-container">
+  <div class="centered-container">
+    <div class="centered-content content-title">
+      <h2 class="title">Bienvenidos a <span>Unicomer</span></h2>
+    </div>
+    <div class="centered-content color-login">
+      <h1>Registro</h1>
+      <form
+        (submit)="signUp()"
+        class="container-form"
+        [formGroup]="myForm"
+        autocomplete="off"
+      >
+        <div class="form-control">
+          <label for="fullname">Nombre y Apellido</label>
+          <input
+            type="text"
+            class="custom-input"
+            id="fullname"
+            formControlName="fullname"
+            name="fullname"
+            placeholder="Ingrese su nombre y apellido"
+          />
+          <span *ngIf="isValidField('fullname')" class="error-message">
+            {{ getFieldError("fullname") }}
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="custom-input"
+            id="email"
+            formControlName="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+          <span *ngIf="isValidField('email')" class="error-message">
+            {{ getFieldError("email") }}
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="documento">Tipo de documento</label>
+          <input
+            class="custom-input"
+            id="documento"
+            formControlName="type_document"
+            placeholder="Ingrese tipo de documento"
+          />
+          <span *ngIf="isValidField('type_document')" class="error-message">
+            {{ getFieldError("type_document") }}
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="nro_document">Numero de documento</label>
+          <input
+            class="custom-input"
+            id="nro_document"
+            formControlName="nro_document"
+            name="nro_documento"
+            placeholder="Ingrese numero de documento"
+          />
+          <span *ngIf="isValidField('nro_document')" class="error-message">
+            {{ getFieldError("nro_document") }}
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="password">Clave</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            name="password"
+            placeholder="Enter your password"
+            class="custom-input"
+          />
+          <span *ngIf="isValidField('password')" class="error-message">
+            {{ getFieldError("password") }}
+          </span>
+        </div>
+        <button class="btn primary" type="submit">Registrar</button>
+      </form>
+      <div class="virtual-keyboard">
+        <i class="fa-regular fa-keyboard"></i>
+        <p>Teclado virtual</p>
+      </div>
+      <small class="next__page"
+        >¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesion</a></small
+      >
+    </div>
+  </div>
+</div>

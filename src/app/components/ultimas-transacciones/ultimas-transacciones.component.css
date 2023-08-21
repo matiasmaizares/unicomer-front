@@ -1,0 +1,173 @@
+.transactions {
+  background: #fff;
+  border-radius: var(--card-border-radius);
+}
+
+.transactions img {
+  width: 2.4rem;
+}
+
+.transactions .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding);
+  padding-bottom: 0;
+}
+
+.transactions .header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.transactions .investment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--card-padding);
+  border-bottom: 1px solid var(--color-light);
+  transition: all 300ms ease;
+}
+
+.transactions .investment:last-child {
+  border: none;
+}
+
+/* ==================== RECENT TRANSACTIONS ================ */
+.recent-transactions {
+  margin-top: 2rem;
+}
+
+.recent-transactions img {
+  width: 2.2rem;
+}
+
+.recent-transactions .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.recent-transactions .header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.recent-transactions .transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem var(--card-padding);
+  border-radius: var(--card-border-radius);
+  transition: all 300ms ease;
+}
+
+.recent-transactions .transaction:hover {
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.recent-transactions .transaction .service {
+  display: flex;
+  gap: 1rem;
+}
+
+.recent-transactions .transaction .service .icon {
+  padding: var(--padding-2);
+  border-radius: var(--border-radius-1);
+  display: flex;
+  align-items: center;
+}
+
+.recent-transactions .card-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recent-transactions .card-details .card {
+  display: flex;
+  width: 4.6rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-2);
+}
+
+.border-circle {
+  color: gray;
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 10px;
+}
+.rotate-red {
+  display: inline-block;
+  transform: rotate(-45deg);
+  background-color: red;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+}
+
+.rotate-green {
+  display: inline-block;
+  transform: rotate(135deg);
+  background-color: green;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+}
+.completo {
+  color: green;
+}
+.incompleto {
+  color: red;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.pages {
+  display: flex;
+  align-items: center;
+}
+.pages p {
+  color: gray;
+  border: 1px solid grey;
+  border-radius: 50%;
+  margin: 4px;
+  padding: 6px;
+}
+.pages i {
+  color: gray;
+}
+.pages .active {
+  background: blue;
+  color: white;
+  border: 1px solid blue;
+}
+.list-invesment .investment:nth-child(even) {
+  background-color: var(--color-light);
+}
+
+.completado {
+  color: green;
+}
+
+.cancelado {
+  color: red;
+}
+
+.pendiente {
+  color: gray;
+}
+@media only screen and (max-width: 750px) {
+  .transactions {
+    margin-top: 10px;
+  }
+}

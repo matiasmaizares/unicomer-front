@@ -1,0 +1,23 @@
+<div class="container-balance">
+  <div class="info-text">
+    <h3>Balance</h3>
+    <div class="check-info">
+      <input type="checkbox" class="checkbox-round" />
+      <p>Esta senama</p>
+      <input type="checkbox" class="checkbox-round" />
+      <p>Semana pasada</p>
+      <button class="btn-info">
+        Semana <i class="fa-solid fa-caret-down"></i>
+      </button>
+    </div>
+  </div>
+  <canvas
+    baseChart
+    class="chart"
+    [data]="barChartData"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [type]="barChartType"
+  >
+  </canvas>
+</div>

@@ -7,8 +7,19 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SaldoComponent } from './components/saldo/saldo.component';
+import { BalanceComponent } from './components/balance/balance.component';
+import { UltimasTransaccionesComponent } from './components/ultimas-transacciones/ultimas-transacciones.component';
+import { TableInfoComponent } from './components/table-info/table-info.component';
+import { NgChartsModule } from 'ng2-charts';
+import { DatePipe } from '@angular/common';
+import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
+import { OperacionesComponent } from './pages/operaciones/operaciones.component';
+import { ProximanteComponent } from './pages/proximante/proximante.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,11 +28,31 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     RegisterComponent,
     NopagefoundComponent,
     HomeComponent,
-    HeaderComponent,
-    SidebarComponent,
+    DashboardComponent,
+    SaldoComponent,
+    BalanceComponent,
+    UltimasTransaccionesComponent,
+    TableInfoComponent,
+    TarjetasComponent,
+    OperacionesComponent,
+    ProximanteComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgChartsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
