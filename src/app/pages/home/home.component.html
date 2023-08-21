@@ -4,6 +4,7 @@
       <a
         [routerLink]="item.to"
         routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
         (click)="handleClick(item)"
       >
         <i [class]="item.icon"></i>
@@ -12,7 +13,6 @@
     </div>
   </div>
 
-  <!-- ========================= Main ==================== -->
   <div class="main" [ngClass]="{ active: isMenuActive }">
     <div class="topbar">
       <div class="container-search">

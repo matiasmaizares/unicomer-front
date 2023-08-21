@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TarjetaService {
-  private URL = 'http://localhost:4000/api';
+  private URL = environment.apiUrl;
   private usuarioId: string;
 
   constructor(private http: HttpClient) {
