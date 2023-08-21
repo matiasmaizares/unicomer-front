@@ -43,7 +43,7 @@
 @media only screen and (max-width: 1300px) {
   #dashboard {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
       "saldo"
       "info"

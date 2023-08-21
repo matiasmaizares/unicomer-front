@@ -2,7 +2,46 @@
   <div class="header">
     <h2>Ultimas transacciones</h2>
   </div>
-  <div class="list-invesment">
+
+  <ng-container *ngIf="transacciones.length > 0; else noTransacciones">
+    <div class="list-invesment">
+      <div class="investment" *ngFor="let transaccion of transacciones">
+        <i
+          class="fa-solid fa-arrow-right"
+          [ngClass]="{
+            'rotate-red': transaccion.descripcion === 'Retiro',
+            'rotate-green': transaccion.descripcion === 'Depósito'
+          }"
+        ></i>
+        <div>
+          <h4>{{ transaccion.nombreUsuario }}</h4>
+          <p>{{ transaccion.tipo }}</p>
+        </div>
+        <div class="amount">
+          <h4>
+            {{ transaccion.monto | currency : "USD" : "symbol" : "2.2-2" }}
+          </h4>
+        </div>
+        <div class="date-time">
+          <p>{{ formatDate(transaccion.fecha, "dd MMM, yyyy") }}</p>
+          <small>{{ formatDate(transaccion.fecha, "hh:mm:ss a") }}</small>
+        </div>
+        <div>
+          <p [ngClass]="getStatusClass(transaccion.estado)">
+            {{ transaccion.estado }}
+          </p>
+        </div>
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noTransacciones class="no-existe">
+    <p class="no-existe">
+      No existen transacciones, cree en la seccion de operaciones
+    </p>
+  </ng-template>
+
+  <!-- <div class="list-invesment">
     <div class="investment" *ngFor="let transaccion of transacciones">
       <i
         class="fa-solid fa-arrow-right"
@@ -29,9 +68,8 @@
       </div>
       <i class="fa-solid fa-ellipsis"></i>
     </div>
-  </div>
-
-  <div class="pagination">
+  </div> -->
+  <div *ngIf="transacciones.length > 0" class="pagination">
     <p>Mostrar 1 - 5 de 100</p>
     <div class="pages">
       <i class="fa-solid fa-caret-left"></i>

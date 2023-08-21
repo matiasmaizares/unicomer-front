@@ -1,5 +1,6 @@
 .saldo {
   height: 100%;
+  width: 100%;
 }
 .saldo h1 {
   display: flex;
@@ -8,6 +9,7 @@
 .saldo .cards {
   margin-top: 1rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .saldo .cards .card {
